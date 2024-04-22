@@ -87,8 +87,13 @@ const loginUser = asyncHandler(async (req, res) => {
   );
 
   const options = {
-    httpOnly: true,
+    httpOnly: true,    
     secure: true,
+    maxAge: 900000,
+    sameSite: 'none',
+    partitioned: true,
+    domain: '.mdshkproperties.online',
+    path: '/'
   };
 
   return res
@@ -118,8 +123,13 @@ const logoutUser = asyncHandler(async (req, res) => {
   );
 
   const options = {
-    httpOnly: true,
+    httpOnly: true,    
     secure: true,
+    maxAge: 900000,
+    sameSite: 'none',
+    partitioned: true,
+    domain: '.mdshkproperties.online',
+    path: '/'
   };
 
   return res
